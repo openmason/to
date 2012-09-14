@@ -1,13 +1,24 @@
-# to
-collection of convertors 
+# to.js
+collection of convertors.
+Comes with command line options to use the convertors along with a library version that can be used within programs as well.
 
--- Nothing yet, move on --
+# Installation
+```bash
+npm install -g to
+npm install to
+```
+
+## Features
+
+### Input
+
+### Output
+
 
 ## Todo
  * Input html (be forgiving with bad html)
  * Input json
  * Input xml
- * Input yaml
  * Input markdown
  * Input jade
  * Output markdown
