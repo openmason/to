@@ -27,10 +27,9 @@ console.log(to.format.yaml.stringify(doc));
 
 
 ## Todo
- * Input json
  * Input xml
  * Input html (be forgiving with bad html)
- * Output json
  * Output xml
+ * add unit tests
  * allow beautification params for all outputs 
 
