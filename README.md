@@ -3,7 +3,7 @@ collection of convertors.
 Comes with command line options to use the convertors along with a library version that can be used within programs as well.
 
 # Solves
-  * handling different input/output formats: yaml,json,xml
+  * handling different input/output formats: yaml,json
 
 ## Installation
 ```bash
@@ -29,7 +29,9 @@ console.log(to.format.yaml.stringify(doc));
 ## Todo
  * Input xml
  * Input html (be forgiving with bad html)
+ * Input markdown 
  * Output xml
+ * Output html
  * add unit tests
  * allow beautification params for all outputs 
 
