@@ -3,7 +3,8 @@ collection of convertors.
 Comes with command line options to use the convertors along with a library version that can be used within programs as well.
 
 # Solves
-  * handling different input/output formats: yaml,json
+  * handling different input/output formats: yaml,json,xml
+  * only input xml is handled (not output xml yet)
 
 ## Installation
     $ npm install -g to
@@ -23,11 +24,10 @@ console.log(to.format.yaml.stringify(doc));
 
 ```
 
- * refer to examples for additional examples
+ * refer to examples directory for xml, json, yaml code
 
 
 ## Todo
- * Input xml
  * Input html (be forgiving with bad html)
  * Input markdown 
  * Output xml
