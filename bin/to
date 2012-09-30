@@ -7,7 +7,28 @@
 var program = require('commander');
 var to = require('..');
 
+var doc = "";
+
 program
   .version(to.version)
-  .option('-i  --input', 'input file')
-  .parse(process.argv);
+  .option('-o, --output [fmt]', 'Specify output format, defaults json', 'json')
+  .description('convert inputfile to given format');
+
+program
+  .command('xml <inpfile>')
+  .action(function(inpfile) {
+    doc=to.format.xml.load(inpfile);
+  });
+program
+  .command('json <inpfile>')
+  .action(function(inpfile) {
+    doc=to.format.json.load(inpfile);
+  });
+program
+  .command('yaml <inpfile>')
+  .action(function(inpfile) {
+    doc=to.format.yaml.load(inpfile);
+  });
+
+program.parse(process.argv);
+console.log(to.format[program.output].stringify(doc));

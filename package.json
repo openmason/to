@@ -2,7 +2,7 @@
   "name": "to",
   "description": "to - convertors to popular formats",
   "homepage": "https://github.com/truepattern/to",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "truepattern <admin@truepattern.com>",
   "dependencies": {
     "underscore"   : ">= 1.4.0",
