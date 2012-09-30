@@ -1,0 +1,13 @@
+#!/usr/bin/env node
+/**
+ * to - copyright(c) 2012 truepattern.
+ * MIT Licensed
+ */
+
+var program = require('commander');
+var to = require('..');
+
+program
+  .version(to.version)
+  .option('-i  --input', 'input file')
+  .parse(process.argv);

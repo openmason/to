@@ -6,10 +6,8 @@ Comes with command line options to use the convertors along with a library versi
   * handling different input/output formats: yaml,json
 
 ## Installation
-```bash
-npm install -g to
-npm install to
-```
+    $ npm install -g to
+    $ npm install to
 
 ## Usage
 Within program
@@ -24,6 +22,8 @@ var doc = ...;
 console.log(to.format.yaml.stringify(doc));
 
 ```
+
+ * refer to examples for additional examples
 
 
 ## Todo

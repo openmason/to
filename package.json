@@ -2,11 +2,12 @@
   "name": "to",
   "description": "to - convertors to popular formats",
   "homepage": "https://github.com/truepattern/to",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "truepattern <admin@truepattern.com>",
   "dependencies": {
     "underscore"   : ">= 1.3.3",
-    "yamljs"       : ">= 0.1.2"
+    "yamljs"       : ">= 0.1.2",
+    "commander"    : ">= 1.0.4"
   },
   "devDependencies": [],
   "keywords": ["converter", "convertor", "json", "xml", "yaml"],
