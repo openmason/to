@@ -79,6 +79,15 @@ Output json
 }
 ```
 
+Output YAML
+```yaml
+dummy:
+  value: ['15', '35', '5', '4784', 'one more']
+  h: [decent, list, another]
+  object: value
+  inner: { h1: value, li: [got, milk] }
+```
+
 ## Todo
  * Input html (be forgiving with bad html)
  * Input markdown 

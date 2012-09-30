@@ -18,3 +18,8 @@ var xmldoc1 = to.format.xml.load(__dirname + '/sample1.xml');
 console.log('json for sample1.xml');
 console.log('======================');
 console.log(to.format.json.stringify(xmldoc1));
+
+// lets print it as yaml
+console.log('yaml for sample1.xml');
+console.log('======================');
+console.log(to.format.yaml.stringify(xmldoc1));
