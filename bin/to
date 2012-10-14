@@ -4,31 +4,53 @@
  * MIT Licensed
  */
 
-var program = require('commander');
+var optimist = require('optimist');
 var to = require('..');
 
 var doc = "";
 
-program
-  .version(to.version)
-  .option('-o, --output [fmt]', 'Specify output format, defaults json', 'json')
-  .description('convert inputfile to given format');
+// to -i inpfile.fmt [-o outfile.fmt | -o fmt]
+//   - fmt dictates the data format 
 
-program
-  .command('xml <inpfile>')
-  .action(function(inpfile) {
-    doc=to.format.xml.load(inpfile);
-  });
-program
-  .command('json <inpfile>')
-  .action(function(inpfile) {
-    doc=to.format.json.load(inpfile);
-  });
-program
-  .command('yaml <inpfile>')
-  .action(function(inpfile) {
-    doc=to.format.yaml.load(inpfile);
-  });
+var argv = optimist
+  .usage('Convert files between formats (xml,json,yaml). Valid extensions are .xml, .json, .yaml, .yml')
+  .options({
+    inpfile : {
+      demand : true,
+      alias : 'i',
+      description : 'Input file. Extension of file dictates the input format'
+    },
+    outfile : {
+      alias : 'o',
+      description : 'Output file or just extension (if only extension given, stdout is used)',
+      default : '.json',
+    },
+  })
+  .argv;
 
-program.parse(process.argv);
-console.log(to.format[program.output].stringify(doc));
+var inputformat = argv.inpfile.indexOf('.')>-1?argv.inpfile.substring(argv.inpfile.indexOf('.')+1):'json';
+var outputformat = argv.outfile.indexOf('.')>-1?argv.outfile.substring(argv.outfile.indexOf('.')+1):'json';
+inputformat = (inputformat && inputformat.length>0 && inputformat) || 'json';
+outputformat = (outputformat && outputformat.length>0 && outputformat) || 'json';
+
+// validate formats
+var knownFormats = ['yaml', 'yml', 'json', 'xml'];
+if(knownFormats.indexOf(inputformat)==-1) {
+  console.log('Unknown input format:'+inputformat);
+  optimist.showHelp();
+  process.exit(1);
+}
+if(knownFormats.indexOf(outputformat)==-1) {
+  console.log('Unknown output format:'+outputformat);
+  optimist.showHelp();
+  process.exit(1);
+}
+
+// convert yml to yaml
+inputformat = inputformat=='yml'?'yaml':inputformat;
+outputformat = outputformat=='yml'?'yaml':outputformat;
+
+// call the converter here
+doc=to.format[inputformat].load(argv.inpfile);
+//@todo: Need to write to the output file
+console.log(to.format[outputformat].stringify(doc));

@@ -21,6 +21,6 @@ console.log(to.format.yaml.stringify(xmldoc1));
 
 var xmldoc2 = to.format.xml.load(__dirname + '/sample2.xml');
 // lets print it as json
-console.log('json for sample1.xml');
+console.log('json for sample2.xml');
 console.log('======================');
 console.log(to.format.json.stringify(xmldoc2));

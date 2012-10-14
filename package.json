@@ -1,14 +1,14 @@
 {
   "name": "to",
-  "description": "to - convertors to popular formats",
+  "description": "to - convert between formats including xml, json, yaml",
   "homepage": "https://github.com/truepattern/to",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "author": "truepattern <admin@truepattern.com>",
   "dependencies": {
     "underscore"   : ">= 1.4.0",
     "yamljs"       : ">= 0.1.2",
     "htmlparser"   : ">= 1.7.6",
-    "commander"    : ">= 1.0.4"
+    "optimist"     : ">= 0.3.5"
   },
   "devDependencies": [],
   "keywords": ["converter", "convertor", "json", "xml", "yaml"],
