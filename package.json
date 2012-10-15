@@ -2,11 +2,11 @@
   "name": "to",
   "description": "to - convert between formats including xml, json, yaml",
   "homepage": "https://github.com/truepattern/to",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": "truepattern <admin@truepattern.com>",
   "dependencies": {
     "underscore"   : ">= 1.4.0",
-    "yamljs"       : ">= 0.1.2",
+    "js-yaml"      : ">= 1.0.2",
     "htmlparser"   : ">= 1.7.6",
     "optimist"     : ">= 0.3.5"
   },

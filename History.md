@@ -1,4 +1,5 @@
-# release 0.2.2
+# release 0.2.4
+ * handling full yaml spec (switched to js-yaml)
  * xml input supported
  * nested element handling for xml added
  * command line tool fixed, output of yaml beautified
