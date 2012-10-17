@@ -2,7 +2,7 @@
   "name": "to",
   "description": "to - convert between formats including xml, json, yaml",
   "homepage": "https://github.com/truepattern/to",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "author": "truepattern <admin@truepattern.com>",
   "dependencies": {
     "underscore"   : ">= 1.4.0",
