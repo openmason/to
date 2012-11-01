@@ -1,4 +1,5 @@
-# release 0.2.4
+# release 0.2.6
+ * any file can be loaded as yaml
  * handling full yaml spec (switched to js-yaml)
  * xml input supported
  * nested element handling for xml added

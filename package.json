@@ -1,9 +1,9 @@
 {
   "name": "to",
-  "description": "to - convert between formats including xml, json, yaml",
-  "homepage": "https://github.com/truepattern/to",
-  "version": "0.2.5",
-  "author": "truepattern <admin@truepattern.com>",
+  "description": "load/convert between xml,json,yaml formats",
+  "homepage": "https://github.com/openmason/to",
+  "version": "0.2.6",
+  "author": "el aras <openmason@gmail.com>",
   "dependencies": {
     "underscore"   : ">= 1.4.0",
     "js-yaml"      : ">= 1.0.2",
@@ -12,7 +12,7 @@
   },
   "devDependencies": [],
   "keywords": ["converter", "convertor", "json", "xml", "yaml"],
-  "repository": {"type":"git", "url": "git://github.com/truepattern/to"},
+  "repository": {"type":"git", "url": "git://github.com/openmason/to"},
   "main": "index",
   "scripts": { "prepublish" : "npm prune" },
   "engines": { "node":">= 0.5.0" }
