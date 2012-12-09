@@ -1,4 +1,4 @@
-# release 0.2.7
+# release 0.2.8
  * added test directory
  * any file can be loaded as yaml
  * handling full yaml spec (switched to js-yaml)

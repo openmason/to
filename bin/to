@@ -6,6 +6,7 @@
 
 var optimist = require('optimist');
 var to = require('..');
+var handy = require('handy');
 
 var doc = "";
 
@@ -28,29 +29,20 @@ var argv = optimist
   })
   .argv;
 
-var inputformat = argv.inpfile.indexOf('.')>-1?argv.inpfile.substring(argv.inpfile.indexOf('.')+1):'json';
-var outputformat = argv.outfile.indexOf('.')>-1?argv.outfile.substring(argv.outfile.indexOf('.')+1):'json';
-inputformat = (inputformat && inputformat.length>0 && inputformat) || 'json';
-outputformat = (outputformat && outputformat.length>0 && outputformat) || 'json';
+var inputformat = handy.getFileExtension(argv.inpfile, 'json');
+var outputformat = handy.getFileExtension(argv.outfile, 'json');
 
 // validate formats
-var knownFormats = ['yaml', 'yml', 'json', 'xml'];
-if(knownFormats.indexOf(inputformat)==-1) {
-  console.log('Unknown input format:'+inputformat);
+if(!to.isValidFormat(inputformat) || !to.isValidFormat(outputformat)) {
   optimist.showHelp();
-  process.exit(1);
-}
-if(knownFormats.indexOf(outputformat)==-1) {
-  console.log('Unknown output format:'+outputformat);
-  optimist.showHelp();
+  console.log('*** do not know how to process format:'+(to.isValidFormat(inputformat)?outputformat:inputformat));
   process.exit(1);
 }
 
 // convert yml to yaml
-inputformat = inputformat=='yml'?'yaml':inputformat;
 outputformat = outputformat=='yml'?'yaml':outputformat;
 
-// call the converter here
-doc=to.format[inputformat].load(argv.inpfile);
+// load appropriate format
+doc=to.load(argv.inpfile);
 //@todo: Need to write to the output file
 console.log(to.format[outputformat].stringify(doc));

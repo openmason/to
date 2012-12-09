@@ -4,7 +4,7 @@
 var to = require('..');
 
 // load the json
-var jsondoc = to.format.json.load(__dirname + '/sample.json');
+var jsondoc = to.load(__dirname + '/sample.json');
 
 // lets print it on the screen - internal format
 console.log('internal js objects');

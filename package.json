@@ -2,10 +2,10 @@
   "name": "to",
   "description": "load/convert between xml,json,yaml formats",
   "homepage": "https://github.com/openmason/to",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "author": "el aras <openmason@gmail.com>",
   "dependencies": {
-    "handy"        : ">= 0.0.9",
+    "handy"        : ">= 0.0.10",
     "underscore"   : ">= 1.4.0",
     "js-yaml"      : ">= 1.0.2",
     "htmlparser"   : ">= 1.7.6",
