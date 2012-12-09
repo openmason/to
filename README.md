@@ -3,7 +3,9 @@ collection of convertors.
 Comes with command line options to use the convertors along with a library version that can be used within programs as well.
 
 # Solves
-  * handling different input/output formats: yaml,json,xml
+  * read input formats json, xml, yaml 
+  * converts the document to internal javascript object form
+  * write output as json, yaml documents
   * only input xml is handled (no output xml yet)
 
 ## Installation
@@ -12,7 +14,16 @@ Comes with command line options to use the convertors along with a library versi
     $ npm install to
 
 ## Usage
-Within program
+
+Command line:
+
+     # reads xml file and prints it in yml
+     $ to -i examples/sample.xml -o .yaml
+     
+     # reads yaml and prints it in json
+     $ to -i examples/sample.yml -o .json
+
+Within your program:
 
     var to = require('to');
     
@@ -25,12 +36,11 @@ Within program
 
  * refer to examples directory for xml, json, yaml code
 
-## Output
-For a sample xml
+## Example
+For a sample input xml:
 
     <?xml version="1.0" encoding="UTF-8" ?>
-    <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
-    
+    <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">    
     <dummy>
     <value>15</value>
     <value>35</value>
@@ -48,7 +58,7 @@ For a sample xml
     </inner>
    </dummy>
 
-Output json
+Output in json:
 
     {
       "dummy": {
@@ -74,14 +84,32 @@ Output json
         }
       }
     }
+    
+    # to try this example
+    $ to -i examples/sample1.xml -o .json
 
-Output YAML
+Output in yaml:
 
-    dummy:
-      value: ['15', '35', '5', '4784', 'one more']
-      h: [decent, list, another]
+    dummy: 
+      value: 
+        - 15
+        - 35
+        - 5
+        - 4784
+        - "one more"
+      h: 
+        - decent
+        - list
+        - another
       object: value
-      inner: { h1: value, li: [got, milk] }
+      inner: 
+        h1: value
+        li: 
+          - got
+          - milk
+
+    # to try this example
+    $ to -i examples/sample1.xml -o .yaml
 
 ## Todo
  * Input html (be forgiving with bad html)
@@ -90,4 +118,9 @@ Output YAML
  * Output html
  * add unit tests
  * allow beautification params for all outputs 
+
+## Test cases
+To execute full test cases
+
+    $ make
 

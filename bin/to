@@ -11,9 +11,9 @@ var doc = "";
 
 // to -i inpfile.fmt [-o outfile.fmt | -o fmt]
 //   - fmt dictates the data format 
-
+var _versionString = 'to v'+to.version;
 var argv = optimist
-  .usage('Convert files between formats (xml,json,yaml). Valid extensions are .xml, .json, .yaml, .yml')
+  .usage(_versionString + '\nConvert files between formats (xml,json,yaml). Valid extensions are .xml, .json, .yaml, .yml')
   .options({
     inpfile : {
       demand : true,
