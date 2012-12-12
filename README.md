@@ -1,3 +1,5 @@
+[![build status](https://secure.travis-ci.org/openmason/to.png)](http://travis-ci.org/openmason/to)
+
 # to.js
 collection of convertors.
 Comes with command line options to use the convertors along with a library version that can be used within programs as well.
