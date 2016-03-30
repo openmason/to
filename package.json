@@ -4,6 +4,7 @@
   "homepage": "https://github.com/openmason/to",
   "version": "0.2.9",
   "author": "el aras <openmason@gmail.com>",
+  "bin": "./bin/to",
   "dependencies": {
     "handy"        : ">= 0.0.11",
     "underscore"   : ">= 1.4.0",
@@ -18,9 +19,9 @@
   "keywords": ["converter", "convertor", "json", "xml", "yaml"],
   "repository": {"type":"git", "url": "git://github.com/openmason/to"},
   "main": "index",
-  "scripts": { 
+  "scripts": {
     "prepublish" : "npm prune",
-    "test" : "make test" 
+    "test" : "make test"
   },
   "engines": { "node":">= 0.8.0" }
 }
